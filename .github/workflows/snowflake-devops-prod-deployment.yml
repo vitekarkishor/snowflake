@@ -1,4 +1,4 @@
-name: snowflake-devops-demo
+name: snowflake-devops-prod-deployment
 
 # Controls when the action will run. 
 on:
