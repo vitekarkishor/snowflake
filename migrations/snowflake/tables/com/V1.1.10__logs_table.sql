@@ -38,11 +38,3 @@ CREATE OR REPLACE TABLE COM.BLOCK_DRIVER(
     BLOCK_NAME VARCHAR(100),
     BLOCK_TYPE VARCHAR(100)
 );
-create or replace view COM.DAILY_MISSED_TABLES_VW as(
-	select block.table_name,block.block_type,block.block_name from "COM"."BLOCK_DRIVER" block
-	left join "COM"."TOTAL_LOADING_VW" vw
-	on block.table_name = vw.RAW_TABLE_NAME
-	and vw.RAW_PARTITION_LOADED = current_date()-1
-	where vw.raw_table_name is null
-	and block.frequency = 'DAILY'
-);
