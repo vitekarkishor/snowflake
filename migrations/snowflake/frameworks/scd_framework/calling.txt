@@ -1,0 +1,31 @@
+CALL ADT.GENERIC_SCD_CALL_SP
+                    (
+			'GENERIC_SCD_CALL_SP_001'::VARCHAR,
+                        CURRENT_TIMESTAMP()::VARCHAR,
+                        '{
+                        "source_schema_name": "TEST_SCHEMA",
+                        "source_table_name" : "DEVICE_STG",
+                        "scd_maping_schema_name": "COM",
+                        "scd_mapping_table_name": "SCD_MAPPING_TABLE",
+                        "upload_date": "2022/03/08",
+                        "load_date": "2022/03/08",
+                        "etl_task_name":"TEST_TASK",
+			"etl_name":"UPDATE_DEVICE_TASK_Update"
+                        }'::VARCHAR
+                    ); 
+
+CALL ADT.GENERIC_PARTITION_DELETE_CALL_SP
+                    (
+			'GENERIC_PARTITION_DELETE_CALL_SP_001'::VARCHAR,
+                        CURRENT_TIMESTAMP()::VARCHAR,
+                        '{
+                        "source_schema_name": "TEST_SCHEMA",
+                        "source_table_name" : "DEVICE_STG",
+                        "scd_maping_schema_name": "COM",
+                        "scd_mapping_table_name": "SCD_MAPPING_TABLE",
+                        "upload_date": "2022/03/08",
+                        "load_date": "2022/03/08",
+                        "etl_task_name":"TEST_TASK",
+			"etl_name":"UPDATE_DEVICE_TASK_Update"
+                        }'::VARCHAR
+                    ); 
