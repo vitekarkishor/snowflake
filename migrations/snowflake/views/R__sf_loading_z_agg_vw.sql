@@ -13,6 +13,6 @@ create or replace view COM.LOADING_AGG_VW(
         min(to_date(raw.partition_date)) as raw_partition_loaded,
         sum(raw.rows_loaded) as raw_rows_loaded,
         count(raw.file_name) as raw_no_of_files_loaded
-        from "ADT"."SF_LOADING_STATS_VW" raw
+        from COM.SF_LOADING_STATS_VW raw
         group by 1,2,3
 );
