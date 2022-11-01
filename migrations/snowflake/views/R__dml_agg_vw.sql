@@ -9,6 +9,6 @@ create or replace view COM.DML_AGG_VW(
     sum(target.rows_inserted) as target_rows_loaded,
     sum(target.rows_updated) as target_rows_updated,
     target.execution_id as execution_id
-    from "ADT"."DML_PROCESS_LOG_VW" target
+    from COM.DML_PROCESS_LOG_VW target
     group by execution_id,target_table_name
 );
