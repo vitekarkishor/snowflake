@@ -1,4 +1,0 @@
-config-version: 1
-
-vars:
-    sf_database : ${{ secrets.SF_DATABASE }}
